@@ -1,6 +1,9 @@
 import sys
 import moviepy.editor as mp
 
+# 使い方
+# python3 gif2mp4.py ./gif/Brownian_Motion_100steps.gif
+
 args = sys.argv
 
 if __name__ == '__main__':
