@@ -3,7 +3,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import animatplot as amp
-import brownianFunc_v2 as brw
+import brownianFunc_2d_v2 as brw
 
 try:
     N = int(input('Number of steps (default=100): '))
@@ -33,7 +33,7 @@ timeline = amp.Timeline(t, units=' steps', fps=30)
 anim = amp.Animation([randomWalk], timeline)
 anim.controls()
 
-savefile = "./gif/Brownian_Motion_{0}steps".format(N)
+savefile = "./gif/Brownian_Motion_2d_{0}steps".format(N)
 anim.save_gif(savefile)
 
 plt.show()

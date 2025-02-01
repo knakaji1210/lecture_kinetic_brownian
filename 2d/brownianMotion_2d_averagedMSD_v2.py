@@ -1,8 +1,10 @@
 # Statistics of 2d Random Walk (Square Lattice model)
 
+# MSDの平均値を計算するバージョン
+
 import numpy as np
 import matplotlib.pyplot as plt
-import brownianFunc_v2 as brw
+import brownianFunc_2d_v2 as brw
 
 try:
     N = int(input('Number of steps (default=100): '))
@@ -46,7 +48,7 @@ ax.scatter(t, d2_mean_list, marker="o", color="red")
 fig.text(0.15, 0.8, fig_text1)
 fig.text(0.15, 0.75, fig_text2)
 
-savefile = "./png/Brownian_Motion_N{0}_M{1}".format(N, M)
+savefile = "./png/Brownian_Motion_2d_averagedMSD_{0}steps_{1}repetition".format(N, M)
 fig.savefig(savefile, dpi=300)
 
 plt.show()

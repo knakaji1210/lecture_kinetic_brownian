@@ -1,9 +1,11 @@
 # Animation of 2d Random Walk (Square Lattice model)
 
+# 描いている軌跡と同時にMSDを計算するバージョン
+
 import numpy as np
 import matplotlib.pyplot as plt
 import animatplot as amp
-import brownianFunc_v2 as brw
+import brownianFunc_2d_v2 as brw
 
 try:
     N = int(input('Number of steps (default=100): '))
@@ -48,7 +50,7 @@ timeline = amp.Timeline(t, units=' steps', fps=30)
 anim = amp.Animation([randomWalk, dist2Origin], timeline)
 anim.controls()
 
-savefile = "./gif/Brownian_Motion_{0}steps_DstProfile".format(N)
+savefile = "./gif/Brownian_Motion_2d_{0}steps_with_MSD_ani.gif".format(N)
 anim.save_gif(savefile)
 
 plt.show()
