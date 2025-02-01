@@ -24,7 +24,7 @@ d2_list_repeat = []
 for i in range (M):
     coordinate_list = brw.randomWalk_2dSquareLattice(N)
     x_array, y_array = brw.coordinateList2xyList(coordinate_list, N)
-    d2_array, d2_array_steps = brw.dist2FromOrigin(x_array, x_array, N)
+    d2_array, d2_array_steps = brw.dist2FromOrigin(x_array, y_array, N)
     d2_list_repeat.append(d2_array)
     
 d2_mean_list = brw.calcMeanDist2(d2_list_repeat, N, M)
