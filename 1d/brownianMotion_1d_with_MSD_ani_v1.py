@@ -26,7 +26,7 @@ t_array_steps = brw.tlistStep(N)
 
 d2_array, d2_array_steps = brw.dist2FromOrigin(x_array, N)
 fig_title1 = "1-dimensional Brownian Motion ($N$ = {0})".format(N)
-fig_title2 = "Mean Square Displacement, <$d^{{2}}$> vs $t$"
+fig_title2 = "$d^{{2}}$ vs $t$"
 
 fig = plt.figure(figsize=(16,8))
 ax1 = fig.add_subplot(121, title=fig_title1, xlabel='$X$', ylabel='$Y$',
@@ -35,7 +35,7 @@ ax1.grid(axis='both', color="gray", lw=0.5)
 
 randomWalk = amp.blocks.Line(x_array_steps, y_array_steps, ax=ax1, ls='-', marker="o", markersize=100/plot_lim, color='blue')
 
-ax2 = fig.add_subplot(122, title=fig_title2, xlabel='$t$', ylabel='<$d^{{2}}$>',
+ax2 = fig.add_subplot(122, title=fig_title2, xlabel='$t$', ylabel='$d^{{2}}$',
         xlim=[0, t_max], ylim=[0 , t_max])
 ax2.grid(axis='both', color="gray", lw=0.5)
 
