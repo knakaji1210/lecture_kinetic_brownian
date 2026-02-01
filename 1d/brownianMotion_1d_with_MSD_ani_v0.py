@@ -17,10 +17,10 @@ t = np.linspace(0, N, N+1)
 t_max = np.max(t)
 
 coordinate_list = brw.randomWalk_1dSquareLattice(N)
-x_list = brw.coordinateList2xyList(coordinate_list, N)
+x_list, y_list = brw.coordinateList2xyList(coordinate_list, N)
 
-t_array_steps = brw.tlistStep(N)
-x_array_steps = brw.xList2xStep(x_list, N)
+x_array_steps = brw.xyList2xyStep(x_list, N)
+y_array_steps = brw.xyList2xyStep(y_list, N)
 
 t_array_steps = brw.tlistStep(N)
 
@@ -31,10 +31,10 @@ fig_title2 = "$d^{{2}}$ vs $t$"
 
 fig = plt.figure(figsize=(16,8))
 ax1 = fig.add_subplot(121, title=fig_title1, xlabel='$X$', ylabel='$Y$',
-        xlim=[0, t_max], ylim=[-plot_lim , plot_lim])
+        xlim=[-plot_lim, plot_lim], ylim=[-plot_lim , plot_lim])
 ax1.grid(axis='both', color="gray", lw=0.5)
 
-randomWalk = amp.blocks.Line(t_array_steps, x_array_steps, ax=ax1, ls='-', marker="o", markersize=100/plot_lim, color='blue')
+randomWalk = amp.blocks.Line(x_array_steps, y_array_steps, ax=ax1, ls='-', marker="o", markersize=100/plot_lim, color='blue')
 
 ax2 = fig.add_subplot(122, title=fig_title2, xlabel='$t$', ylabel='$d^{{2}}$',
         xlim=[0, t_max], ylim=[0 , t_max])
