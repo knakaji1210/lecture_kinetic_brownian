@@ -26,7 +26,7 @@ t_array_steps = brw.tlistStep(N)
 
 d2_array, d2_array_steps = brw.dist2FromOrigin(x_list, y_list, N)
 
-fig_title1 = "2-dimensional Random Walk ($N$ = {0})".format(N)
+fig_title1 = "2-dimensional Brownian Motion ($N$ = {0})".format(N)
 fig_title2 = "$d^{{2}}$ vs $t$"
 
 fig = plt.figure(figsize=(16,8))
@@ -40,7 +40,7 @@ ax2 = fig.add_subplot(122, title=fig_title2, xlabel='$t$', ylabel='$d^{{2}}$',
         xlim=[0, t_max], ylim=[0 , t_max])
 ax2.grid(axis='both', color="gray", lw=0.5)
 
-# Theoretically <x^2> = <2Dt> = <t> since D = 1/2
+# Theoretically <x^2> = 4Dt = t since D = 1/4
 ax2.plot(t, t, ls='--', color="gray", lw=0.5)
 
 dist2Origin = amp.blocks.Scatter(t_array_steps, d2_array_steps, ax=ax2, marker="o", s=300/plot_lim, color='red')

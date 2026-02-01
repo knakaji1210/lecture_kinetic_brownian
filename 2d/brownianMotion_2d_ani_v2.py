@@ -19,7 +19,7 @@ x_list, y_list = brw.coordinateList2xyList(coordinate_list, N)
 x_array_steps = brw.xyList2xyStep(x_list, N)
 y_array_steps = brw.xyList2xyStep(y_list, N)
 
-fig_title = "2-dimensional Random Walk ($N$ = {0})".format(N)
+fig_title = "2-dimensional Brownian Motion ($N$ = {0})".format(N)
 
 fig = plt.figure(figsize=(8,8))
 ax = fig.add_subplot(111, title=fig_title, xlabel='$X$', ylabel='$Y$',

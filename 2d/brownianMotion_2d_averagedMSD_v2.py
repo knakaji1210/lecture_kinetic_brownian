@@ -32,14 +32,14 @@ d2_mean_list = brw.calcMeanDist2(d2_list_repeat, N, M)
 fig_text1 = "Number of steps: {}".format(N)
 fig_text2 = "Number of repetition: {}".format(M)
 
-fig_title = "<$d^{{2}}$> vs $t$"
+fig_title = "Mean Square Displacement, <$d^{{2}}$> vs $t$"
 
 fig = plt.figure(figsize=(8,8))
 ax = fig.add_subplot(111, title=fig_title, xlabel='$t$', ylabel='<$d^{{2}}$>',
         xlim=[0, t_max], ylim=[0 , t_max])
 ax.grid(axis='both', color="gray", lw=0.5)
 
-# Theoretically <x^2> = <2Dt> = <t> since D = 1/2
+# Theoretically <x^2> = 4Dt = t since D = 1/4
 ax.plot(t, t, ls='--', color="gray", lw=0.5)
 
 # MSD
