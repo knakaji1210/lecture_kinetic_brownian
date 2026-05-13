@@ -50,8 +50,8 @@ timeline = amp.Timeline(t, units=' steps', fps=30)
 anim = amp.Animation([randomWalk, dist2Origin], timeline)
 anim.controls()
 
-savefile = "./gif/Brownian_Motion_2d_{0}steps_with_MSD_ani".format(N)
-anim.save_gif(savefile)
+savefile = './mp4/Brownian_Motion_2d_{0}steps_with_MSD_ani.mp4'.format(N)
+anim.save(savefile, writer='ffmpeg', fps=30, extra_args=['-r', '30'])
 
 plt.show()
 plt.close()
